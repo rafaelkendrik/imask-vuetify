@@ -3,9 +3,12 @@
 A simple component that integrates Vuetify TextField component with Imask.
 Available in pug and html templates.
 
-# Usage
+## Motivation
+This component contains few simple rules to deal with some common side effect when Imask is integrated with native inputs inside Vuetify TextField.
 
-## HTML Template
+## Usage
+
+**HTML Template**
 
 ```vue
 <template>
@@ -25,7 +28,7 @@ Available in pug and html templates.
 </script>
 ```
 
-## Pug Template
+**Pug Template**
 ```vue
 <template lang="pug">
   imask-field(
