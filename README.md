@@ -4,7 +4,13 @@ A simple component that integrates Vuetify TextField component with Imask.
 Available in pug and html templates.
 
 ## Motivation
-This component contains few simple rules to deal with some common side effect when Imask is integrated with native inputs inside Vuetify TextField.
+This component contains few simple rules that have solved some common side effects when Imask is integrated with native inputs inside Vuetify TextField.
+This side effects are common even while using [vue-imask](https://github.com/uNmAnNeR/imaskjs/tree/master/packages/vue-imask).
+
+## Dependencies
+
+- [Vuetify](https://github.com/vuetifyjs/vuetify)
+- [Imask](https://imask.js.org/)
 
 ## Usage
 
