@@ -11,17 +11,14 @@
 <script>
   import Imask from 'imask'
 
-  const EVENT = 'input'
-
-  let element = {}
-  let masked = {}
+  const INPUT_EVENT = 'input'
 
   export default {
     name: 'ImaskField',
 
     model: {
       prop: 'value',
-      event: EVENT
+      event: INPUT_EVENT
     },
 
     props: {
@@ -37,22 +34,27 @@
       }
     },
 
+    data: () => ({
+      element: {},
+      masked: {}
+    }),
+
     methods: {
       init () {
-        element = this.$refs.field.$el.querySelector('input')
-        masked = Imask(element, this.mask)
+        this.element = this.$refs.field.$el.querySelector('input')
+        this.masked = Imask(this.element, this.mask)
       },
 
       input (value) {
-        this.$emit(EVENT, value)
+        this.$emit(INPUT_EVENT, value)
       },
 
       checkNormalize () {
-        const isNormalized = (element.value === masked.value)
+        const isNormalized = (this.element.value === this.masked.value)
 
         if (!isNormalized) {
-          element.value = masked.value
-          element.dispatchEvent(new Event(EVENT))
+          this.element.value = this.masked.value
+          this.element.dispatchEvent(new Event(INPUT_EVENT))
         }
       }
     },
